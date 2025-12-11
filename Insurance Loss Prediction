@@ -1,0 +1,21 @@
+Insurance Loss Prediction & Claim Status Classification
+
+Machine Learning & Feature Engineering for Risk Modeling
+
+Tools: Python, Scikit-Learn, LightGBM, XGBoost, SMOTE, SHAP
+Techniques: Regression (LC & HALC), Classification (CS), Outlier control, Feature engineering, Capping, Cross-validation, One-Hot Encoding, SHAP interpretability
+
+This project builds end-to-end predictive models for insurance loss cost (LC), historically adjusted loss cost (HALC), and claim status (CS) using a real-world-like insurance dataset.
+
+It simulates a full analytics workflow used by pricing, underwriting, and risk modeling teams:
+	1.	Data cleaning & outlier handling
+	2.	Date parsing & 10+ engineered features
+	3.	Pipeline-based preprocessing (numeric + categorical)
+	4.	Regression models for LC & HALC
+	5.	Classification models for claim status
+	6.	Feature selection using L1, XGBoost, LightGBM
+	7.	Model comparison using 5-fold CV RMSE / ROC-AUC
+	8.	Model interpretability with SHAP
+	9.	Final prediction generation for LC, HALC, and CS
+
+Project Link: https://colab.research.google.com/drive/1d7wettRf3dihqE4Lm3fymTGo6cWeu8p8?authuser=1#scrollTo=fik2bAXsSYyC
