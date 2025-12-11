@@ -1,0 +1,24 @@
+Oracle Database Project — Data Integration & SQL Analysis
+
+Tools: Oracle Autonomous Database, SQL, Python (cx_Oracle), Google Colab
+
+Skills demonstrated:
+
+✔ Relational schema design
+✔ Connecting to Oracle DB from Python
+✔ Writing SQL queries (JOIN, GROUP BY, filtering)
+✔ Data loading & manipulation
+✔ Analytical SQL for business questions
+
+This project demonstrates how to connect a Google Colab environment to an Oracle Autonomous Database, load data into relational tables, and perform analytical SQL queries.
+
+The goal is to show a complete workflow:
+	1.	Database setup
+	2.	Table creation & schema
+	3.	Data insertion
+	4.	Querying the data
+	5.	Business insights from SQL analysis
+
+This project simulates a real analyst workflow using a cloud database environment.
+
+Project (partial) link: https://colab.research.google.com/drive/17v6p9cwNtgY17JSee0vEgGuyuYB0fTmo?usp=sharing
