@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Rella Tao | Interactive Analytics Portfolio&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8fafc; /* Slate 50 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #334155; /* Slate 700 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Chart Container Strict Styling */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chart-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-left: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 300px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.chart-container {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>height: 350px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-hover:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Custom Scrollbar for panels */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.custom-scroll::-webkit-scrollbar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.custom-scroll::-webkit-scrollbar-track {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #f1f5f9;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.custom-scroll::-webkit-scrollbar-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #cbd5e1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.custom-scroll::-webkit-scrollbar-thumb:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #94a3b8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.timeline-line {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Chosen Palette: Modern Slate &amp; Indigo (Warm Neutral Background) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Application Structure Plan: Dashboard approach. Top section establishes identity and core metrics. Middle section provides interactive exploration of skills and experience. Bottom section details projects with filtering capabilities. Designed to allow recruiters to scan high-level data then drill down into specific technical capabilities. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Visualization &amp; Content Choices: Radar Chart for skills to show multi-disciplinary balance. Doughnut chart for industry exposure. Bar chart for quantifiable impact metrics. All implemented via Chart.js in responsive containers. NO SVG. --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="antialiased"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Navigation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav class="bg-white shadow-sm sticky top-0 z-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between h-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-2xl font-bold text-slate-800 tracking-tight"&gt;Rella Tao&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="ml-3 px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full hidden sm:inline-block"&gt;MS Business Analytics (USC)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#dashboard" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition"&gt;Dashboard&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#experience" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition"&gt;Experience&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="#projects" class="text-slate-600 hover:text-indigo-600 font-medium text-sm transition"&gt;Projects&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="copyEmail()" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-envelope mr-2"&gt;&lt;/i&gt;Contact</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Hero Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="bg-white border-b border-slate-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="md:w-2/3 mb-6 md:mb-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Turning Complex Data into &lt;span class="text-indigo-600"&gt;Strategic Impact&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg text-slate-600 leading-relaxed max-w-2xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>I am a Business Analytics professional specializing in translating raw data into executive-ready insights.<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>With experience across &lt;strong&gt;Healthcare, AdTech, Finance, and Consulting&lt;/strong&gt;, I bridge the gap between technical engineering and business strategy using Python, SQL, and AI-driven workflows.</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mt-6 flex flex-wrap gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-sm font-medium border border-slate-200"&gt;&lt;i class="fas fa-map-marker-alt mr-1"&gt;&lt;/i&gt; Los Angeles, CA&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-sm font-medium border border-slate-200"&gt;&lt;i class="fas fa-graduation-cap mr-1"&gt;&lt;/i&gt; USC '26 (3.76 GPA)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="px-3 py-1 bg-slate-100 text-slate-700 rounded text-sm font-medium border border-slate-200"&gt;&lt;i class="fas fa-globe mr-1"&gt;&lt;/i&gt; U.S. Citizen / Permanent Res.&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Key Stats Cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="md:w-1/3 grid grid-cols-2 gap-4 w-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-indigo-50 p-4 rounded-xl text-center border border-indigo-100 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-bold text-indigo-700"&gt;4+&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-xs text-indigo-900 font-semibold uppercase tracking-wide mt-1"&gt;Industries&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-emerald-50 p-4 rounded-xl text-center border border-emerald-100 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-bold text-emerald-700"&gt;8+&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-xs text-emerald-900 font-semibold uppercase tracking-wide mt-1"&gt;Major Projects&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-blue-50 p-4 rounded-xl text-center border border-blue-100 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-bold text-blue-700"&gt;3&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-xs text-blue-900 font-semibold uppercase tracking-wide mt-1"&gt;Degrees/Certs&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-amber-50 p-4 rounded-xl text-center border border-amber-100 shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-3xl font-bold text-amber-700"&gt;Top 5&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-xs text-amber-900 font-semibold uppercase tracking-wide mt-1"&gt;Case Finalist&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Dashboard Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Analytics Dashboard --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="dashboard" class="scroll-mt-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="h-8 w-1 bg-indigo-600 rounded-full mr-3"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-2xl font-bold text-slate-800"&gt;Competency Overview&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-slate-600 mb-8 max-w-3xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>This dashboard visualizes my technical proficiency and industry exposure. Hover over chart elements to see specific tools and context.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 lg:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Chart 1: Skills Radar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-semibold text-slate-800 mb-2 text-center"&gt;Technical &amp; Strategic Balance&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;canvas id="skillsChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-center text-slate-400 mt-2"&gt;Balanced mix of Engineering &amp; Business&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Chart 2: Domain Expertise --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-semibold text-slate-800 mb-2 text-center"&gt;Industry Exposure&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;canvas id="domainChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-center text-slate-400 mt-2"&gt;Versatile background across sectors&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Chart 3: Quantitative Impact --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-semibold text-slate-800 mb-2 text-center"&gt;Measurable Impact&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;canvas id="impactChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-center text-slate-400 mt-2"&gt;Key performance metrics from past roles&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Interactive Experience Timeline --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="experience" class="scroll-mt-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="h-8 w-1 bg-indigo-600 rounded-full mr-3"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-2xl font-bold text-slate-800"&gt;Professional Experience&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 lg:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Timeline List --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="col-span-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-fit"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="relative pl-4 space-y-8" id="timeline-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="timeline-line"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Timeline Items Injected via JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Experience Detail View --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="col-span-1 lg:col-span-2 bg-white p-8 rounded-2xl shadow-sm border border-slate-200 min-h-[400px] flex flex-col justify-center transition-all duration-300" id="experience-detail-panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center text-slate-400"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i class="fas fa-mouse-pointer text-4xl mb-4 opacity-50"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Select a role from the timeline to see detailed impact and responsibilities.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Project Showcase --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="projects" class="scroll-mt-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex flex-col md:flex-row md:items-center justify-between mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center mb-4 md:mb-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="h-8 w-1 bg-indigo-600 rounded-full mr-3"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 class="text-2xl font-bold text-slate-800"&gt;Project Portfolio&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-slate-500"&gt;Academic, Research &amp; Competitive Projects&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Filters --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-wrap gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="filter-btn active px-4 py-2 bg-slate-800 text-white rounded-lg text-sm font-medium transition" data-filter="all"&gt;All Projects&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="filter-btn px-4 py-2 bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 rounded-lg text-sm font-medium transition" data-filter="AI"&gt;AI / ML&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="filter-btn px-4 py-2 bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 rounded-lg text-sm font-medium transition" data-filter="Healthcare"&gt;Healthcare&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="filter-btn px-4 py-2 bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 rounded-lg text-sm font-medium transition" data-filter="Finance"&gt;Finance&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Project Grid --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Projects injected via JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Education Footer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="border-t border-slate-200 pt-10 pb-20"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-xl font-bold text-slate-800 mb-6 text-center"&gt;Education&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="inline-block p-3 bg-red-50 rounded-full mb-3 text-red-700"&gt;&lt;i class="fas fa-university"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-slate-800"&gt;University of Southern California&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-indigo-600 font-semibold text-sm"&gt;MS in Business Analytics&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-500 text-xs mt-1"&gt;Exp. May 2026 | GPA: 3.76&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-500 text-xs italic mt-2"&gt;Dean's List: Fall '24, Spring '25&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="inline-block p-3 bg-blue-50 rounded-full mb-3 text-blue-700"&gt;&lt;i class="fas fa-university"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="font-bold text-slate-800"&gt;HKUST&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-indigo-600 font-semibold text-sm"&gt;BBA Accounting &amp; Info Systems&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-500 text-xs mt-1"&gt;Jan 2024 | GPA: 3.6&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-500 text-xs italic mt-2"&gt;Dean's List Honoree&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- JS Logic --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- DATA STORE ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const portfolioData = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>experience: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>id: 'commonpoint',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>role: 'Data &amp; Insights Fellow',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>company: 'Commonpoint',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>location: 'New York',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Jan 2026 - Present',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>summary: 'Leading AI-assisted data workflows for program evaluation.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>highlights: [</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Leveraged AI workflows to automate qualitative data cleaning for 1,000+ survey responses.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Led quantitative analysis using pivot tables and Looker Studio.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Transformed raw survey data into KPI-driven impactful insights.'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tags: ['AI Ops', 'Looker Studio', 'Leadership']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>id: 'openx',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>role: 'Intern - BI &amp; FP&amp;A',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>company: 'OpenX Technology',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>location: 'Pasadena, CA',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Jun 2025 - Aug 2025',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>summary: 'Automated financial reporting reducing turnaround by 30%.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>highlights: [</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Designed Python/SQL automated reporting workflows, reducing time by 30%.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Built interactive Looker Studio dashboards for C-suite executives.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Conducted ad-hoc SQL analysis on DSP performance to inform forecasting.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Standardized SSP commercial data in Salesforce.'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tags: ['Python', 'SQL', 'FP&amp;A', 'Salesforce']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>id: 'deloitte',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>role: 'Analyst - Finance &amp; Performance',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>company: 'Deloitte Consulting',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>location: 'Hong Kong',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Jan 2024 - Jun 2024',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>summary: 'Managed Oracle EPM transformation for global retail client.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>highlights: [</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Redesigned Oracle EPM process flows across 500+ data points.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Coordinated 3 cross-functional teams for SIT/UAT testing using Jira.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Verified 600+ financial forms to ensure 100% audit readiness.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Identified automation "quick wins" via process mapping.'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tags: ['Oracle EPM', 'Jira', 'Process Mapping', 'Consulting']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>id: 'taiping',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>role: 'Intern - Finance &amp; Accounting',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>company: 'China Taiping Life Insurance',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>location: 'Hong Kong',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Dec 2020 - Aug 2021',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>summary: 'Ensured data integrity for 10,000+ monthly transactions.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>highlights: [</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Reconciled 10,000+ transactions across SAP and Oracle systems.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Redesigned reimbursement workflows to improve internal controls.',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Executed period-end close procedures and journal entries.'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tags: ['SAP', 'Oracle', 'Reconciliation']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>projects: [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'Generative AI Scoping Review',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Jan 2026',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>category: 'AI',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desc: 'Synthesized literature on LLM-based GenAI impact on adolescents, categorizing governance risks and use cases.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tech: ['Research', 'LLM Analysis', 'Governance']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'AWS RAG Knowledge Base',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Nov 2025',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>category: 'AI',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desc: 'Architected end-to-end RAG pipeline using Amazon Bedrock &amp; Glue. Engineered vector database for efficient querying.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tech: ['AWS Bedrock', 'S3', 'Glue', 'Vector DB']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'Appointment Prediction Model',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Sep 2025',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>category: 'Healthcare',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desc: 'Built XGBoost/Logistic Regression models to predict patient cancellations, reducing rates ~2x below benchmark.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tech: ['Python', 'XGBoost', 'SHAP', 'Healthcare Ops']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'Patient Loyalty Framework',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Jan 2025',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>category: 'Healthcare',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desc: 'modeled patient retention metrics using EHR data across 6 hospital tables. Correlated NPS with clinical outcomes.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tech: ['EHR Data', 'Analytics', 'Strategy']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'Fake News Prediction Model',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Feb 2025',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>category: 'AI',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desc: 'NLP pipeline using TF-IDF and Word2Vec to classify misinformation. Tuned hyperparameters for max accuracy.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tech: ['NLP', 'TF-IDF', 'Logistic Regression']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'UCLA Health Case Comp',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Nov 2024',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>category: 'Healthcare',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desc: 'Top 5 Finalist. Designed scalable care model using Excel Power Query to analyze regional demographics.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tech: ['Excel', 'Strategy', 'Market Research']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'HK IPO Market Analysis',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Feb 2023',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>category: 'Finance',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desc: 'Audited 2022 IPO pricing data from HKEX to identify valuation trends and performance drivers.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tech: ['Financial Modeling', 'Data Audit']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'Credit Research Analysis',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Oct 2021',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>category: 'Finance',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desc: 'Extracted ratio values from 1,000+ S&amp;P Global reports to evaluate credit performance trends.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tech: ['Excel', 'Large Datasets', 'Research']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'J.P. Morgan Inv. Banking',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>date: 'Aug 2022',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>category: 'Finance',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>desc: 'Proposed equity carve-out strategy for Geely/Zeekr listing. Conducted valuation scenario analysis.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>tech: ['Valuation', 'M&amp;A Strategy', 'Scenario Analysis']</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>]</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- INITIALIZATION ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initCharts();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderTimeline();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>renderProjects('all');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Default select first experience</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showExperienceDetail(portfolioData.experience[0].id);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Filter Event Listeners</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.filter-btn').forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.addEventListener('click', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.querySelectorAll('.filter-btn').forEach(b =&gt; b.classList.remove('active', 'bg-slate-800', 'text-white'));</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.querySelectorAll('.filter-btn').forEach(b =&gt; b.classList.add('bg-white', 'text-slate-600'));</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>e.target.classList.remove('bg-white', 'text-slate-600');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>e.target.classList.add('active', 'bg-slate-800', 'text-white');</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>renderProjects(e.target.dataset.filter);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- CHARTS ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initCharts() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 1. Skills Radar</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ctxSkills = document.getElementById('skillsChart').getContext('2d');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>new Chart(ctxSkills, {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: 'radar',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>labels: ['Data Analysis', 'AI / ML', 'Cloud (AWS)', 'Strategy', 'Visualization', 'Dev (Python/SQL)'],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>label: 'Proficiency Level',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>data: [95, 85, 75, 90, 95, 90],</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>backgroundColor: 'rgba(79, 70, 229, 0.2)', // Indigo</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderColor: 'rgba(79, 70, 229, 1)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointBackgroundColor: 'rgba(79, 70, 229, 1)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointBorderColor: '#fff',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointHoverBackgroundColor: '#fff',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointHoverBorderColor: 'rgba(79, 70, 229, 1)'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>r: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>angleLines: { display: true },</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>suggestedMin: 50,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>suggestedMax: 100,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ticks: { display: false } // Hide numbers for cleaner look</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>legend: { display: false }</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 2. Domain Doughnut</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ctxDomain = document.getElementById('domainChart').getContext('2d');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>new Chart(ctxDomain, {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: 'doughnut',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>labels: ['Finance', 'Healthcare', 'AdTech/Media', 'Consulting'],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>data: [35, 25, 20, 20],</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>backgroundColor: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'#3b82f6', // Blue (Finance)</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'#10b981', // Emerald (Healthcare)</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'#f59e0b', // Amber (Media)</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'#6366f1'<span class="Apple-converted-space">  </span>// Indigo (Consulting)</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderWidth: 0</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } }</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 3. Impact Bar Chart</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ctxImpact = document.getElementById('impactChart').getContext('2d');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>new Chart(ctxImpact, {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: 'bar',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>labels: ['Report Time Redux (%)', 'Survey Responses', 'Data Points Mapped', 'Trans. Reconciled'],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>label: 'Metric Value',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>data: [30, 1000, 500, 10000],</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>backgroundColor: [</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'rgba(244, 63, 94, 0.7)', // Rose</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'rgba(16, 185, 129, 0.7)', // Emerald</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'rgba(59, 130, 246, 0.7)', // Blue</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>'rgba(245, 158, 11, 0.7)'<span class="Apple-converted-space">  </span>// Amber</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderRadius: 6</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>indexAxis: 'y', // Horizontal bar</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>x: { beginAtZero: true, grid: { display: false } },</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>y: { grid: { display: false } }</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>legend: { display: false },</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>tooltip: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>callbacks: {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>label: function(context) {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>let label = context.dataset.label || '';</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>if (label) label += ': ';</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>if (context.parsed.x === 30) return label + '30%';</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>if (context.parsed.x === 1000) return label + '1,000+';</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>if (context.parsed.x === 500) return label + '500+';</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>if (context.parsed.x === 10000) return label + '10,000+';</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>return label + context.parsed.x;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- RENDER FUNCTIONS ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderTimeline() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const container = document.getElementById('timeline-container');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>portfolioData.experience.forEach((job, index) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const item = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>item.className = `relative z-10 flex items-center mb-8 cursor-pointer group`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>item.onclick = () =&gt; showExperienceDetail(job.id);</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>item.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="h-4 w-4 rounded-full bg-white border-2 border-indigo-600 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="ml-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="text-sm font-bold text-slate-800 group-hover:text-indigo-600 transition-colors"&gt;${job.company}&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-slate-500"&gt;${job.date}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.appendChild(item);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showExperienceDetail(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const job = portfolioData.experience.find(j =&gt; j.id === id);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const panel = document.getElementById('experience-detail-panel');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Animate out</p>
+<p class="p1"><span class="Apple-converted-space">            </span>panel.style.opacity = '0';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>panel.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="text-2xl font-bold text-slate-800"&gt;${job.role}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-indigo-600 font-medium"&gt;${job.company} | ${job.location}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-bold"&gt;${job.date}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-slate-600 italic mb-6 border-l-4 border-indigo-200 pl-4"&gt;${job.summary}&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="font-bold text-slate-800 mb-3 text-sm uppercase tracking-wide"&gt;Key Impact&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul class="space-y-3 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${job.highlights.map(h =&gt; `&lt;li class="flex items-start"&gt;&lt;i class="fas fa-check-circle text-emerald-500 mt-1 mr-3 flex-shrink-0"&gt;&lt;/i&gt;&lt;span class="text-slate-600 text-sm"&gt;${h}&lt;/span&gt;&lt;/li&gt;`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex flex-wrap gap-2 mt-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${job.tags.map(t =&gt; `&lt;span class="px-2 py-1 bg-slate-50 text-slate-500 border border-slate-200 rounded text-xs"&gt;${t}&lt;/span&gt;`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Animate in</p>
+<p class="p1"><span class="Apple-converted-space">                </span>panel.style.opacity = '1';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 300);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderProjects(filter) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const grid = document.getElementById('project-grid');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid.innerHTML = '';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const filtered = filter === 'all'<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>? portfolioData.projects<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>: portfolioData.projects.filter(p =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if(filter === 'AI') return p.category === 'AI';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return p.category === filter;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>filtered.forEach(p =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const card = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.className = 'bg-white p-6 rounded-xl border border-slate-200 shadow-sm card-hover flex flex-col h-full';</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Determine icon based on category</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let iconClass = 'fa-folder';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let colorClass = 'text-slate-500';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(p.category === 'AI') { iconClass = 'fa-brain'; colorClass = 'text-purple-600'; }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(p.category === 'Healthcare') { iconClass = 'fa-heartbeat'; colorClass = 'text-emerald-600'; }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(p.category === 'Finance') { iconClass = 'fa-chart-line'; colorClass = 'text-blue-600'; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>card.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between items-start mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-2 bg-slate-50 rounded-lg ${colorClass}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;i class="fas ${iconClass} text-xl"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text-xs font-bold text-slate-400"&gt;${p.date}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-lg font-bold text-slate-800 mb-2 leading-tight"&gt;${p.title}&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-slate-600 mb-4 flex-grow"&gt;${p.desc}&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="border-t border-slate-100 pt-4 mt-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-wrap gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${p.tech.map(t =&gt; `&lt;span class="text-[10px] font-semibold bg-slate-50 text-slate-500 px-2 py-1 rounded border border-slate-100"&gt;${t}&lt;/span&gt;`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid.appendChild(card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function copyEmail() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const email = 'yiben.tao.2025@marshall.usc.edu';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const tempInput = document.createElement('input');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tempInput.value = email;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.appendChild(tempInput);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tempInput.select();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.execCommand('copy');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.removeChild(tempInput);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>alert('Email copied to clipboard: ' + email);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
